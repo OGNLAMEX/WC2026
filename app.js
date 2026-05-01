@@ -560,7 +560,7 @@ async function openExtraBoosterWithCode() {
     const code = normalizeBoosterCode(input?.value);
     if (!code) throw new Error('Ingresa un código de booster extra.');
     if (!EXTRA_BOOSTER_CODES.includes(code)) throw new Error('Código inválido. Revisa mayúsculas, guiones y caracteres.');
-    if (readUsedBoosterCodes().includes(code)) throw new Error('Este código ya fue utilizado en este navegador.');
+    if (readUsedBoosterCodes().includes(code)) throw new Error('Este código ya fue utilizado');
 
     if (!state.cards.length) await loadCollection({ user, silent: true });
     if (trigger) trigger.disabled = true;
