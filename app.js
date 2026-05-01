@@ -363,7 +363,7 @@ function renderExchangeOptions() {
 
   select.innerHTML = duplicates.map(card => {
     const count = state.serverCollection[card.cardId] || 0;
-    const number = String(card.number || '').padStart(3, '0');
+    const number = String(card.number || '').padStart(2, '0');
     return `<option value="${safeText(card.cardId)}">#${safeText(number)} · ${safeText(card.name || card.cardId)} · ${safeText(card.rarity || 'standard')} · x${count}</option>`;
   }).join('');
 }
